@@ -1,0 +1,9 @@
+.wrapper {
+  border: 1px solid rgba(79, 98, 159, 0.1);
+  border-radius: 1px;
+  flex-shrink: 0;
+  background: #fff;
+  color: #767986;
+  width: 60%;
+  padding: 15px 15px 15px 45px;
+}
