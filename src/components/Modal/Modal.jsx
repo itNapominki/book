@@ -14,8 +14,7 @@ export default function Modal({ isOpen, setIsOpen, toggleForm }) {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
-    console.log(watch);
+    setIsOpen(false);
     // Создаем ссылку на файл PDF
     const link = document.createElement("a");
     link.href = bookPDF;
