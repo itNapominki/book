@@ -4,6 +4,7 @@ import MyInput from "../MyInput/MyInput";
 import bookPDF from "../../image/Instruction.pdf";
 import { useForm } from "react-hook-form";
 import Modal from "../Modal/Modal";
+import { postContactToMail } from "../../utils/fetch";
 
 export default function FormLoadBook({
   setIsOpenThanks,
@@ -15,12 +16,17 @@ export default function FormLoadBook({
 
   const {
     register,
-    handleSubmit,
-    watch,
+    handleSubmit,    
+    getValues,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
+
+    // отправляем сообщение по почте
+    const values = getValues(); // Получаем значения полей формы    
+    postContactToMail(values);
+    // закрываем popup
     setIsOpen(false);
     // Создаем ссылку на файл PDF
     const link = document.createElement("a");
