@@ -1,15 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import style from "./SectionBook.module.css";
-import Modal from "./components/Modal/Modal";
 import book from "./image/book.png";
 import MyButton from "./components/MyButton/MyButton";
+import FormLoadBook from "./components/FormLoadBook/FormLoadBook";
+import FormThanks from "./components/FormThanks/FormThanks";
 
 export default function SectionBook() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenFormLoad, setIsOpenFormLoad] = useState(false);
+  const [isOpenFormThanks, setIsOpenFormThanks] = useState(false);
 
-  const toggleForm = () => {
-    setIsOpen(!isOpen);
+  const toggleFormLoad = () => {
+    setIsOpenFormLoad(!isOpenFormLoad);
   };
+
+  const toggleFormThanks = () => {
+    setIsOpenFormThanks(!isOpenFormThanks);
+  };
+
+  // Закрываем подтверждение спустя 2 секунды
+  useEffect(() => {    
+    if (isOpenFormThanks) {
+      setTimeout(function () {
+        setIsOpenFormThanks(false);
+      }, 2000);
+    }
+  }, [isOpenFormThanks]);
 
   return (
     <>
@@ -25,11 +40,20 @@ export default function SectionBook() {
             поминок"
           </p>
           <img className={style.imgMobile} src={book} />
-          <MyButton onClick={toggleForm} title="Скачать книгу"></MyButton>
+          <MyButton onClick={toggleFormLoad} title="Скачать книгу"></MyButton>
         </div>
       </main>
-      {isOpen && (
-        <Modal isOpen={isOpen} setIsOpen={setIsOpen} toggleForm={toggleForm} />
+      {isOpenFormLoad && (
+        <FormLoadBook
+          isOpen={isOpenFormLoad}
+          setIsOpen={setIsOpenFormLoad}
+          setIsOpenThanks={toggleFormThanks}
+          toggleForm={toggleFormLoad}
+        />
+      )}
+
+      {isOpenFormThanks && (
+        <FormThanks toggleForm={toggleFormThanks}></FormThanks>
       )}
     </>
   );
