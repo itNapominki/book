@@ -69,7 +69,7 @@ export default function FormLoadBook({
   return (
     <>
       <Modal toggleForm={toggleForm}>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form id='lead_book' onSubmit={handleSubmit(onSubmit)}>
           <div className={style.wrapper}>
             <h3>
               Получить инструкцию <br></br>
@@ -92,6 +92,7 @@ export default function FormLoadBook({
             ></MyInput>
             <p className={style.errors}>{errors.phone?.message}</p>
             <MyButton
+              id='lead_book_get'
               disabled={isErrors}
               type="submit"
               title="Получить книгу"

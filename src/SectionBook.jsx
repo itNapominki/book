@@ -39,7 +39,7 @@ export default function SectionBook() {
             поминок"
           </p>
           <img className={style.imgMobile} src={book} />
-          <MyButton onClick={toggleFormLoad} title="Скачать книгу"></MyButton>
+          <MyButton id='lead_book_load' onClick={toggleFormLoad} title="Скачать книгу"></MyButton>
         </div>
       </main>
       {isOpenFormLoad && (
