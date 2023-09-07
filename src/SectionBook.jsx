@@ -32,9 +32,8 @@ export default function SectionBook() {
         <img className={style.imgDesctop} src={book} />
         <div className={style.content}>
           <h3 className={style.title}>
-            Инструкция <br></br> по организации поминального обеда
+            Как избежать ошибки при организации поминального обеда?
           </h3>
-
           <p className={`${style.title} ${style.titleDescription}`}>
             Получите бесплатно <br></br> "7 полезных советов по организации
             поминок"

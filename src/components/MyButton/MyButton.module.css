@@ -25,3 +25,16 @@
 .err {
   opacity: 0.5;
 }
+
+
+@media (max-width: 900px) {
+  .btn {
+    width: 40%;
+  }
+}
+
+@media (max-width: 500px) {
+  .btn {
+    width: 80%;
+  }
+}
