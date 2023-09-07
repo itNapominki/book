@@ -22,7 +22,7 @@ export default function SectionBook() {
     if (isOpenFormThanks) {
       setTimeout(function () {
         setIsOpenFormThanks(false);
-      }, 2000);
+      }, 3000);
     }
   }, [isOpenFormThanks]);
 

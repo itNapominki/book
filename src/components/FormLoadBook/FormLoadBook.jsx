@@ -39,7 +39,7 @@ export default function FormLoadBook({
     // открываем подтверждение спустя 3 секунды
     setTimeout(function () {
       setIsOpenThanks(false);
-    }, 3000);
+    }, 1000);
   };
 
   const validationData = {
@@ -51,7 +51,7 @@ export default function FormLoadBook({
       },
     },
     phone: {
-      required: "Поле 'Введите летефон' должно быть заполнено",
+      required: "Поле 'Введите телефон' должно быть заполнено",
       pattern: /^[+8]/,
       minLength: {
         value: 10,
